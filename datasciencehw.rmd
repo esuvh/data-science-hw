@@ -1,0 +1,26 @@
+---
+title: "HW 01 - data science hw"
+author: "esubalew vande hey"
+date: "2023-01-12"
+output: github_document
+---
+
+## Load packages and data
+
+```{r load-packages, message=FALSE}
+library(tidyverse)
+library(openintro)
+```
+
+### First Data visualization homework (exercises 3.2)
+
+the graph shows a negative correlation between engine size and efficiency. in Lamens; the larger the engine the lower the efficiency of a car.
+
+
+```{r first mileage graph}
+ ggplot(data = mpg) + 
+ geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+
+
