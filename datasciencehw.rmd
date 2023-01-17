@@ -29,3 +29,51 @@ the colour isnt blue because the command colour = "blue" was placed inside of th
 ```
 
 
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = drv, y = cyl))
+```
+
+3.5.1: 
+1. what happens when you when you facet on a continuous variable?
+the continuous variable will become a catagorical variable. one column or row for each value/variable.
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_grid(drv ~ cyl)
+```
+
+2. what do the empty cells above mean? how do they relate to this plot?
+
+the empty cells show that there was no 4 wheeler with 5 cylinders, rear wheeler with 5 cylinders either, and finally zero cars where shown to have rear wheel drive and 4 cylinders.
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(drv ~ .)
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(. ~ cyl)
+```
+
+3. what does a "." do to the facet variables?
+depending on where it is placed, it will affect weather the plot will be vertical or horizontal. it also seems to hide the function name and makes that variable void.
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 2)
+```
+
+4. the advantages of faceting data is that it is an easy way to get a quick visual to asses your data informally before moving forward. naturally because its a human behavior (visualizing) it is hard to scale up so it is not reliable with a large data set. when compared to color aesthetic, the more variables there are the more helpful color aesthetic would be because you can separate variables much more easily. 
+
+
+5. Nrow is a command to nullify a row from the plot and Ncol is the command that nullifies a column/variable and fades it out but could potentially be given a colour that brightens it.
+
+
+
+6. 
+
+
